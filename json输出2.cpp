@@ -253,9 +253,9 @@ public:
 		return t1;
 	}
 	
-//两次运算的符号不能一起进行重载！！！！ 
-//利用嵌套类进行解决！（此处在_TableRef中再重载一次[]就行了） 
-
+	// The two operational character can't be overloading together!!!
+	// use a nested class to solve this problem!! (in class _TableRef, overload [] again)
+	
 /*	_TableRef & operator [][] (string header, int index) {
 		_TableRef t1(*this);
 		t1.headers.push_back(header);
@@ -313,7 +313,7 @@ private:
 	class _TableRef {  
 		
 	private:
-		Table & table; // TableRef中一定要包含Table的引用，才能对Table进行修改
+		Table & table; // TableRef must include the reference of "Table", to revise it
 		vector <int> rowIndexes; // use to change values in table (not just change TableRef)
 		vector <string> headers;
 		vector <vector <string> > values; 
